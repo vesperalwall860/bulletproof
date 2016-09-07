@@ -1,6 +1,7 @@
-from project import app, models, forms, mail, db
 import datetime
-from flask import render_template, flash, redirect, request, session
+import json
+from project import app, models, forms, mail, db
+from flask import render_template, flash, redirect, request, session, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Message
 
@@ -256,7 +257,7 @@ def review_add(product_id):
     if not product:
         return 'None'
 
-    # if it was sent from out js script
+    # if it was sent from our js script
     if request.method == 'POST':
         author = request.form.get('author')
         author_email = request.form.get('author_email')
@@ -270,7 +271,26 @@ def review_add(product_id):
         db.session.add(review)
         db.session.commit()
 
-        return 'Success'
+        product = models.Product.query.get(product_id)
+        reviews = product.reviews.all()
+
+        html_output = ""
+
+        for review in reviews:
+            html_output += """
+            <p>
+            Author: <strong>%s</strong>
+            </p>
+            <p>
+            Rate: <strong>%s</strong>
+            </p>
+            <p style="border-bottom: 1px solid #707070;">
+            Text:<br>%s
+            <br><br>
+            </p>
+            """ % (review.author, review.rate, review.text)
+
+        return html_output
     else:
         return 'None'
 

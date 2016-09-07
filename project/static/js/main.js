@@ -109,6 +109,7 @@ $(document).ready(function() {
                 // check if the product we want to add a review to exists
                 if (data != 'None') {
                     alert('Your review has been sent.');
+                    $('.shop-inner .tab-body li:nth-child(2)').html(data);
                     // close the popup window
                     $('.review-add-popup-bg').click();
                 }
