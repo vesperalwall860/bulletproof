@@ -1,0 +1,1139 @@
+@font-face {
+    font-family: 'AvenirNextLTProRegular';
+    src: url('fonts/AvenirNextLTProRegular.eot');
+    src: url('fonts/AvenirNextLTProRegular.eot') format('embedded-opentype'),
+         url('fonts/AvenirNextLTProRegular.woff2') format('woff2'),
+         url('fonts/AvenirNextLTProRegular.woff') format('woff'),
+         url('fonts/AvenirNextLTProRegular.ttf') format('truetype'),
+         url('fonts/AvenirNextLTProRegular.svg#AvenirNextLTProRegular') format('svg');
+}
+@font-face {
+    font-family: 'AvenirNextLTProBold';
+    src: url('fonts/AvenirNextLTProBold.eot');
+    src: url('fonts/AvenirNextLTProBold.eot') format('embedded-opentype'),
+         url('fonts/AvenirNextLTProBold.woff2') format('woff2'),
+         url('fonts/AvenirNextLTProBold.woff') format('woff'),
+         url('fonts/AvenirNextLTProBold.ttf') format('truetype'),
+         url('fonts/AvenirNextLTProBold.svg#AvenirNextLTProBold') format('svg');
+}
+@font-face {
+    font-family: 'AvenirNextLTProUltLtCn';
+    src: url('fonts/AvenirNextLTProUltLtCn.eot');
+    src: url('fonts/AvenirNextLTProUltLtCn.eot') format('embedded-opentype'),
+         url('fonts/AvenirNextLTProUltLtCn.woff2') format('woff2'),
+         url('fonts/AvenirNextLTProUltLtCn.woff') format('woff'),
+         url('fonts/AvenirNextLTProUltLtCn.ttf') format('truetype'),
+         url('fonts/AvenirNextLTProUltLtCn.svg#AvenirNextLTProUltLtCn') format('svg');
+}
+@font-face {
+    font-family: 'AvenirNextLTProMediumCn';
+    src: url('fonts/AvenirNextLTProMediumCn.eot');
+    src: url('fonts/AvenirNextLTProMediumCn.eot') format('embedded-opentype'),
+         url('fonts/AvenirNextLTProMediumCn.woff2') format('woff2'),
+         url('fonts/AvenirNextLTProMediumCn.woff') format('woff'),
+         url('fonts/AvenirNextLTProMediumCn.ttf') format('truetype'),
+         url('fonts/AvenirNextLTProMediumCn.svg#AvenirNextLTProMediumCn') format('svg');
+}
+@font-face {
+    font-family: 'AvenirNextLTProDemi';
+    src: url('fonts/AvenirNextLTProDemi.eot');
+    src: url('fonts/AvenirNextLTProDemi.eot') format('embedded-opentype'),
+         url('fonts/AvenirNextLTProDemi.woff2') format('woff2'),
+         url('fonts/AvenirNextLTProDemi.woff') format('woff'),
+         url('fonts/AvenirNextLTProDemi.ttf') format('truetype'),
+         url('fonts/AvenirNextLTProDemi.svg#AvenirNextLTProDemi') format('svg');
+}
+@font-face {
+    font-family: 'MyriadProRegular';
+    src: url('fonts/MyriadProRegular.eot');
+    src: url('fonts/MyriadProRegular.eot') format('embedded-opentype'),
+         url('fonts/MyriadProRegular.woff2') format('woff2'),
+         url('fonts/MyriadProRegular.woff') format('woff'),
+         url('fonts/MyriadProRegular.ttf') format('truetype'),
+         url('fonts/MyriadProRegular.svg#MyriadProRegular') format('svg');
+}
+@font-face {
+    font-family: 'AvenirNextLTProUltLt';
+    src: url('fonts/AvenirNextLTProUltLt.eot');
+    src: url('fonts/AvenirNextLTProUltLt.eot') format('embedded-opentype'),
+         url('fonts/AvenirNextLTProUltLt.woff2') format('woff2'),
+         url('fonts/AvenirNextLTProUltLt.woff') format('woff'),
+         url('fonts/AvenirNextLTProUltLt.ttf') format('truetype'),
+         url('fonts/AvenirNextLTProUltLt.svg#AvenirNextLTProUltLt') format('svg');
+}
+@font-face {
+    font-family: 'AvenirNextLTProUltLtIt';
+    src: url('fonts/AvenirNextLTProUltLtIt.eot');
+    src: url('fonts/AvenirNextLTProUltLtIt.eot') format('embedded-opentype'),
+         url('fonts/AvenirNextLTProUltLtIt.woff2') format('woff2'),
+         url('fonts/AvenirNextLTProUltLtIt.woff') format('woff'),
+         url('fonts/AvenirNextLTProUltLtIt.ttf') format('truetype'),
+         url('fonts/AvenirNextLTProUltLtIt.svg#AvenirNextLTProUltLtIt') format('svg');
+}
+@font-face {
+    font-family: 'AvenirNextLTProUltLtCnIt';
+    src: url('fonts/AvenirNextLTProUltLtCnIt.eot');
+    src: url('fonts/AvenirNextLTProUltLtCnIt.eot') format('embedded-opentype'),
+         url('fonts/AvenirNextLTProUltLtCnIt.woff2') format('woff2'),
+         url('fonts/AvenirNextLTProUltLtCnIt.woff') format('woff'),
+         url('fonts/AvenirNextLTProUltLtCnIt.ttf') format('truetype'),
+         url('fonts/AvenirNextLTProUltLtCnIt.svg#AvenirNextLTProUltLtCnIt') format('svg');
+}
+
+body {
+    background: #000;
+    font-family: 'AvenirNextLTProRegular';
+}
+.container {
+    background: #1a1a1a;
+}
+.header {
+    height: 53px;
+}
+@media (max-width: 992px) {
+    .header {
+        height: auto;
+    }
+}
+.header .menu-icon {
+    display: inline-block;
+    background: url(../img/menu-icon.png) center no-repeat;
+    background-size: 100%;
+    height: 17px;
+    width: 18px;
+    cursor: pointer;
+    position: relative;
+    top: 40%;
+    margin-left: 3%;
+}
+.header .black {
+    background: #000;
+    height: 53px;
+    border-right: 1px solid #a2a2a2;
+    z-index: 3;
+    position: relative;
+}
+.header .logo {
+    width: 100px;
+    height: 32px;
+    position: relative;
+    top: 30%;
+    margin-left: 8%;
+
+}
+.header .grey {
+    height: 53px;
+    background: #1a1a1a;
+    box-shadow: -10px 0 10px rgba(0,0,0,.4);
+    position: relative;
+    z-index: 2;
+}
+.header .grey.last {
+    z-index: 1;
+    box-shadow: -10px 0 10px rgba(0,0,0,.4);
+}
+.header .refresh-icon {
+    display: inline-block;
+    background: url(../img/refresh-icon.png) center no-repeat;
+    background-size: 100%;
+    height: 20px;
+    width: 19px;
+    cursor: pointer;
+    position: relative;
+    top: 10px;
+}
+.header input.search {
+    display: inline-block;
+    width: 80%;
+    font-size: 0.9285714285714286em;
+    color: #fff;
+    background: url(../img/search-icon.png) 16px center no-repeat;
+    background-size: 19px 19px;
+    border: none;
+    font-family: 'AvenirNextLTProUltLtCn';
+    font-weight: bold;
+    border-left: 1px solid #242424;
+    height: 41px;
+    margin-left: 16px;
+    border-radius: 0;
+    position: relative;
+    top: 6px;
+    padding-left: 52px;
+}
+.header #cart {
+    float: left;
+    display: block;
+    color: #fff;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 0.9257142857142857em;
+    cursor: pointer;
+}
+.header #cart .inner {
+    display: none;
+    position: absolute;
+    background: #fff;
+    color: #000;
+    text-align: left;
+    padding: 5px 10px;
+    text-align: right;
+    width: auto;
+}
+.header #cart .inner ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+.header #cart .inner ul .delete,
+table .delete {
+    color: red;
+    cursor: pointer;
+}
+.header #cart .inner ul .delete:hover,
+table .delete:hover {
+    text-decoration: underline;
+}
+.header #cart .inner ul li:last-child {
+    text-align: right;
+}
+.header #cart .inner a {
+    color: #000;
+    text-decoration: underline;
+}
+.header #cart .inner a:hover {
+    text-decoration: none;
+}
+.header #cart:hover .inner {
+    display: block;
+}
+.header #cart:hover .inner.empty {
+    display: none;
+}
+.header .profile-photo-small {
+    width: 28px;
+    height: 28px;
+    position: relative;
+    top: 11px;
+    float: right;
+    margin-right: 22px;
+}
+.header .settings-icon {
+    display: inline-block;
+    background: url(../img/settings-icon.png) center no-repeat;
+    background-size: 100%;
+    height: 23px;
+    width: 23px;
+    position: relative;
+    top: 14px;
+    float: right;
+    margin-right: 13px;
+}
+.sidebar {
+    background: #000;
+    border-right: 1px solid #a2a2a2;
+}
+.sidebar .greetings {
+    font-size: 0.955em;
+    color: #fff;
+    text-align: center;
+    /*margin-top: 43px;*/
+    padding-top: 43px;
+}
+.sidebar .profile-photo {
+    height: 85px;
+    width: 85px;
+    margin-bottom: 3px;
+}
+.sidebar .greetings span {
+    display: block;
+    font-size: 0.91em;
+    color: #8b919f;
+    line-height: 26px;
+}
+.sidebar .greetings div {
+
+}
+.sidebar ul.menu {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 54px;
+    letter-spacing: 0.08em;
+}
+.sidebar ul.menu li {
+    
+}
+.sidebar ul.menu li a {
+    display: block;
+    font-size: 0.8757142857142857em;
+    color: #fff;
+    width: 100%;
+    padding: 12px 33px;
+}
+.sidebar ul.menu li a:hover {
+    font-family: 'AvenirNextLTProBold';
+    text-decoration: none;
+}
+.sidebar ul.menu li a.active {
+    background: #1a1a1a;
+    width: 101%;
+    position: relative;
+    z-index: 2;
+}
+.sidebar ul.menu:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+}
+.content {
+    background: #1a1a1a;
+}
+.content h1 {
+    font-size: 1.585em;
+    color: #fff;
+    font-weight: normal;
+    margin-top: 19px;
+    padding-top: 32px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    background: #303030;
+    margin-bottom: 0;
+}
+ul.products {
+    list-style-type: none;
+    margin-left: 0;
+    padding: 0;
+    background: #303030;
+}
+ul.products > li {
+    float: left;
+    background: #222;
+    text-align: center;
+    margin-left: 10px;
+    margin-bottom: 12px;
+    width: 200px;
+    height: 301px;
+    box-shadow: 3px -4px 4px rgba(160,160,160,.1);
+    position: relative;
+}
+ul.products li ul.product-rating,
+.shop-inner ul.product-rating {
+    list-style-type: none;
+    padding: 0;
+    margin: 12px auto 0;
+    width: 41px;
+}
+ul.products li ul.product-rating li,
+.shop-inner ul.product-rating li {
+    float: left;
+    height: 7px;
+    width: 7px;
+    margin-right: 1px;
+}
+ul.products li ul.product-rating li:last-child,
+.shop-inner ul.product-rating li:last-child {
+    margin-right: 0;
+}
+ul.products li ul.product-rating li.full,
+.shop-inner ul.product-rating li.full {
+    background: url(../img/star-full.png) center no-repeat;
+    background-size: 100%;
+}
+ul.products li ul.product-rating li.empty,
+.shop-inner ul.product-rating li.empty {
+    background: url(../img/star-empty.png) center no-repeat;
+    background-size: 100%;
+}
+ul.products li ul.product-rating:after,
+.shop-inner ul.product-rating:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+}
+ul.products li .product-title {
+    font-size: 0.7928571428571429em;
+    color: #fff;
+    margin-top: 7px;
+}
+ul.products li .product-title a {
+    color: #fff;
+    text-decoration: none;
+}
+ul.products li .product-title a:hover {
+    text-decoration: underline;
+}
+ul.products li .product-price {
+    font-size: 0.7264285714285714em;
+    color: #a3a0a0;
+    margin-top: 1px;
+}
+ul.products li .product-img {
+    height: 169px;
+    margin-top: 16px;
+}
+ul.products li .product-controls {
+    border-top: 1px solid #303030;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    line-height: 32px;
+    text-align: center;
+}
+ul.products li .product-label {
+    font-size: 0.5621428571428571em;
+    color: #010101;
+    background: #eecd56;
+    line-height: 13px;
+    height: 13px;
+    font-weight: bold;
+    padding: 0 7px;
+    float: left;
+    margin-top: 5%;
+    margin-left: 12px;
+    position: absolute;
+    left: 0;
+}
+ul.products li .btn-add-to-cart {
+    font-size: 0.7242857142857143em;
+    color: #fff;
+    text-align: center;
+}
+ul.products li .btn-like {
+    display: inline-block;
+    background: url(../img/like.png) center no-repeat;
+    background-size: auto 90%;
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    float: right;
+    margin-top: 5%;
+    margin-right: 7px;
+    position: absolute;
+    right: 0;
+}
+/*ul.products li .btn-like:hover {
+    background: url(../img/like-hover.png) center no-repeat;
+}*/
+ul.products li .product-controls:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+}
+ul.products:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+/* Shop Inner */
+.shop-inner {
+
+}
+.shop-inner .inner {
+    margin: 19px 20px;
+    background: #303030;
+    padding: 31px;
+}
+.shop-inner .product-images-main {
+    background: #252424;
+    /*width: 278px;*/
+    max-width: 278px;
+    width: 100%;
+    padding: 44px 0 43px;
+    text-align: center;
+}
+.shop-inner .product-images-main img.product-img-large {
+    width: 180px;
+    height: 215px;
+}
+.shop-inner ul.product-images {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 6px;
+}
+.shop-inner ul.product-images li {
+    float: left;
+    background: #1c1c1c;
+    text-align: center;
+    width: 62px;
+    height: 62px;
+    padding: 8px 0;
+    margin-right: 10px;
+    box-shadow: 3px -4px 4px rgba(160,160,160,.1);
+}
+.shop-inner ul.product-images li:last-child {
+    margin-right: 0;
+}
+.shop-inner ul.product-images li img {
+    max-height: 100%;
+}
+.shop-inner ul.product-images:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+}
+.shop-inner .product-details {
+    color: #fff;
+}
+.shop-inner .product-details h2 {
+    font-weight: normal;
+    font-size: 1.279285714285714em;
+    font-family: 'AvenirNextLTProDemi';
+    margin-top: 0;
+    line-height: 14px;
+}
+.shop-inner ul.product-rating {
+    float: left;
+    width: 54px;
+    margin: 0;
+    margin-top: 3px;
+}
+.shop-inner ul.product-rating li {
+    width: 10px;
+    height: 9px;
+}
+.shop-inner .product-reviews {
+    display: block;
+    float: left;
+    font-size: 0.7935714285714286em;
+    margin-top: 1px;
+    margin-left: 10px;
+    font-family: 'AvenirNextLTProUltLt';
+}
+.shop-inner .product-reviews a {
+    color: #fff;
+    text-decoration: none;
+}
+.shop-inner .product-reviews a:hover {
+    text-decoration: underline;
+}
+.shop-inner .product-price {
+    font-size: 1.322857142857143em;
+    font-family: 'MyriadProRegular';
+    color: #fefefe;
+    letter-spacing: 0.1em;
+    margin-top: 6px;
+}
+.shop-inner .product-overview {
+    margin-top: 9px;
+}
+.shop-inner .product-overview h3 {
+    font-size: 1.122857142857143em;
+    font-family: 'AvenirNextLTProDemi';
+    color: #fefefe;
+    margin-top: 0;
+    margin-bottom: 14px;
+}
+.shop-inner .product-overview p {
+    font-size: 0.9257142857142857em;
+    color: #fefefe;
+    line-height: 20px;
+    width: 340px;
+}
+@media (max-width: 992px) {
+    .shop-inner .product-overview p {
+        width: auto;
+    }
+}
+.shop-inner .product-controls {
+    margin-top: 31px;
+}
+.shop-inner .product-controls .input-outer {
+    display: inline-block;
+    position: relative;
+    width: 68px;
+}
+.shop-inner .product-controls .input-outer .plus,
+.shop-inner .product-controls .input-outer .minus {
+    background: #303030;
+    outline: none;
+    border: 1px solid #777;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    line-height: 10px;
+    padding: 0;
+}
+.shop-inner .product-controls .input-outer .plus {
+    top: 0;
+    right: 0;
+    border-bottom: 0;
+}
+.shop-inner .product-controls .input-outer .minus {
+    bottom: 0;
+    right: 0;
+}
+.shop-inner .product-controls input.qty {
+    font-size: 1.122857142857143em;
+    color: #fefefe;
+    font-family: 'MyriadProRegular';
+    width: 68px;
+    height: 36px;
+    padding-left: 13px;
+    background: none;
+    outline: none;
+    border: 1px solid #777;
+}
+.shop-inner .btn-add-to-cart {
+    background: #fff;
+    text-align: center;
+    font-size: 0.9907142857142857em;
+    color: #000;
+    width: 98px;
+    border-radius: 2px;
+    height: 36px;
+    line-height: 34px;
+    display: inline-block;
+    border: 1px solid #d7d7d7;
+    outline: none;
+    padding: 0;
+    position: relative;
+    top: 1px;
+    margin-left: 5px;
+}
+.shop-inner .btn-like {
+    background: url(../img/like-yellow.png) center no-repeat;
+    background-size: 14px 13px;
+    cursor: pointer;
+    border: 1px solid #eecd56;
+    padding: 9px 17px;
+    margin-left: 5px;
+    position: relative;
+    top: 1px;
+}
+.shop-inner .tabs {
+    color: #fff;
+    margin-top: 13px;
+}
+.shop-inner ul.tab-title {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+.shop-inner ul.tab-title li {
+    font-size: 0.9907142857142857em;
+    float: left;
+    text-align: center;
+    border: 1px solid #303030;
+    border-bottom: none;
+    cursor: pointer;
+    line-height: 31px;
+    letter-spacing: 0.1em;
+    padding: 0 10px;
+}
+.shop-inner ul.tab-title li.active {
+    border: 1px solid #555;
+    border-bottom: none;
+}
+.shop-inner ul.tab-title:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+}
+.shop-inner ul.tab-body {
+    list-style-type: none;
+    border: 1px solid #707070;
+    padding: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+}
+.shop-inner ul.tab-body li {
+    display: none;
+}
+.shop-inner ul.tab-body li.active {
+    display: block;
+}
+.shop-inner ul.tab-body li p {
+    font-size: 0.9907142857142857em;
+    margin-top: 15px;
+    margin-bottom: 19px;
+    line-height: 20px;
+}
+
+/* Member Account */
+.member-account {
+    color: #fff;
+}
+.member-account .inner {
+    margin: 24px 20px;
+    background: #303030;
+    padding: 31px;
+}
+.member-account h2 {
+    margin: 0;
+    font-size: 1.171428571428571em;
+    font-weight: normal;
+    margin-bottom: 17px;
+}
+.member-account form {
+
+}
+.member-account .input-group {
+
+}
+.member-account label {
+    display: block;
+    font-size: 0.8164285714285714em;
+    font-family: 'AvenirNextLTProUltLt';
+    line-height: 15px;
+}
+.member-account label em {
+    font-family: 'AvenirNextLTProUltLtIt';
+}
+.member-account input {
+    display: block;
+    font-size: 0.8164285714285714em;
+    background: none;
+    border: 1px solid #808080;
+    outline: none;
+    height: 36px;
+    padding: 0 15px;
+    border-radius: 2px;
+    /*width: 328px;*/
+    /*width: 206.5%;*/
+    width: 100%;
+    margin-bottom: 13px;
+}
+.member-account input[type=submit]:hover {
+    background: #fff;
+    color: #303030;
+}
+.member-account .profile-photo {
+    width: 144px;
+    height: 144px;
+    display: block;
+    margin-top: 6px;
+}
+.member-account button {
+    display: block;
+    font-size: 0.6778571428571429em;
+    border-radius: 4px;
+    background: #dedcdc;
+    border: none;
+    outline: none;
+    color: #000;
+    letter-spacing: 0.1em;
+    width: 96px;
+    height: 20px;
+    margin-top: 13px;
+    padding-bottom: 3px;
+    font-weight: bold;
+}
+
+/* Limited time offer */
+ul.offers {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 3px;
+}
+ul.offers li {
+    float: left;
+    background: #fff;
+    width: 410px;
+    height: 183px;
+    margin-right: 10px;
+    margin-bottom: 28px;
+}
+ul.offers .offer-img {
+    float: left;
+    width: 43.29%;
+    background: #a2a2a2;
+    text-align: center;
+    position: relative;
+    height: 100%;
+}
+ul.offers .offer-img img {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+ul.offers .offer-img .offer-discount {
+    font-size: 0.9778571428571429em;
+    color: #fff;
+    background: #3d3d3d;
+    text-align: center;
+    border-radius: 5px;
+    position: absolute;
+    top: 5.5%;
+    right: 5%;
+    height: 25px;
+    line-height: 25px;
+    width: 47px;
+}
+ul.offers .offer-details {
+    float: left;
+    width: 56.71%;
+    padding: 16px 24px 16px 16px;
+}
+ul.offers h2,
+ul.offers h3 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 0.9571428571428571em;
+    color: #000;
+}
+ul.offers h2 {
+    text-transform: uppercase;
+}
+ul.offers h3 {
+    margin-top: 8px;
+}
+ul.offers .offer-price-old {
+    font-size: 0.7978571428571429em;
+    color: #8b8b8b;
+    margin-top: 24px;
+    text-decoration: line-through;
+}
+ul.offers .offer-price-new {
+    font-size: 1.345em;
+    font-family: 'AvenirNextLTProDemi';
+    color: #000;
+    line-height: 22px;
+}
+ul.offers .btn-apply {
+    font-size: 0.8485714285714286em;
+    text-transform: uppercase;
+    border: none;
+    background: #000;
+    color: #fff;
+    outline: none;
+    width: 100%;
+    margin-top: 12px;
+    height: 36px;
+}
+ul.offers:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+/* Live bulletproof */
+.live-bulletproof {
+    padding-top: 24px;
+}
+.live-bulletproof .slider-body,
+.bulletproof-details .slider-body {
+    background: #303030;
+}
+.live-bulletproof .slider-body.text-content {
+    padding: 108px 23px 8px;
+}
+.live-bulletproof .slider-body .player {
+    height: 472px;
+    background: url(../img/player.png) center no-repeat;
+}
+.live-bulletproof .slider-nav,
+.bulletproof-details .slider-nav {
+    display: none;
+    background: #303030;
+    height: 47px;
+    padding-top: 11px;
+    margin-bottom: 9px;
+}
+
+/* UNSLIDER */
+.unslider-nav {
+    background: #303030;
+    height: 47px;
+    padding-top: 11px;
+    margin-bottom: 9px;
+}
+
+.live-bulletproof .slider-nav.dark {
+    background: #2a2a2a;
+    padding-top: 19px;
+}
+.live-bulletproof .slider-nav ul,
+.bulletproof-details .slider-nav ul {
+    margin-left: 23px;
+    list-style-type: none;
+    padding: 0;
+}
+.live-bulletproof .slider-nav.dark ul {
+    margin-left: 23px;
+}
+.live-bulletproof .slider-nav ul li,
+.bulletproof-details .slider-nav ul li {
+    float: left;
+    background: #505050;
+    height: 6px;
+    width: 6px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-top: 2px;
+    margin-right: 7px;
+}
+
+/* UNSLIDER */
+.unslider-nav ol li {
+    background: #505050;
+    border: none;
+    height: 6px;
+    width: 6px;
+}
+
+.live-bulletproof .slider-nav ul li.active,
+.bulletproof-details .slider-nav ul li.active {
+    background: #868686;
+}
+.live-bulletproof .slider-nav ul li.arrow-left,
+.bulletproof-details .slider-nav ul li.arrow-left {
+    background: url(../img/arrow-left.png) center no-repeat;
+    margin-right: 13px;
+}
+.live-bulletproof .slider-nav ul li.arrow-right,
+.bulletproof-details .slider-nav ul li.arrow-right {
+    background: url(../img/arrow-right.png) center no-repeat;
+    margin-left: 13px;
+}
+.live-bulletproof .slider-nav ul li.arrow-left,
+.live-bulletproof .slider-nav ul li.arrow-right,
+.bulletproof-details .slider-nav ul li.arrow-right,
+.bulletproof-details .slider-nav ul li.arrow-left {
+    background-size: 100%;
+    width: 8px;
+    height: 11px;
+    margin-top: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+}
+
+/* UNSLIDER */
+.unslider-arrow.prev {
+    background: url(../img/arrow-left.png) center no-repeat;
+    background-size: 100%;
+    left: 0;
+}
+.unslider-arrow.next {
+    background: url(../img/arrow-right.png) center no-repeat;
+    background-size: 100%;
+    right: 0;
+}
+.unslider-arrow {
+    position: static;
+    background-size: 100%;
+    width: 8px;
+    height: 11px;
+    display: inline-block;
+    left: 0;
+}
+
+.live-bulletproof .slider-nav ul li:last-child,
+.bulletproof-details .slider-nav ul li:last-child {
+    margin-right: 0;
+}
+.live-bulletproof .slider-nav ul:after,
+.bulletproof-details .slider-nav ul:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+}
+.live-bulletproof .slider-body h2 {
+    font-size: 1.157857142857143em;
+    font-weight: normal;
+    color: #fff;
+    margin: 0;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+}
+.live-bulletproof .slider-body h2 a {
+    color: #fff;
+    text-decoration: none;
+}
+.live-bulletproof .slider-body h2 a:hover {
+    text-decoration: underline;
+}
+.live-bulletproof .slider-body p {
+    font-size: 0.85em;
+    color: #fff;
+    margin: 0;
+    line-height: 23px;
+    letter-spacing: 0.05em;
+}
+
+/* Live bulletproof details */
+.live-bulletproof-details {
+    padding-top: 24px;
+}
+.bulletproof-images {
+    float: left;
+    width: 50%;
+}
+.bulletproof-images img {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.bulletproof-images div {
+    position: relative;
+    height: 289px;
+    width: 100%;
+}
+.bulletproof-images div:first-child {
+    background: #a2a2a2;
+}
+.bulletproof-images div:last-child {
+    background: #c6c6c6;
+    height: 267px;
+}
+.bulletproof-details {
+    float: left;
+    width: 50%;
+}
+.bulletproof-details .slider-body {
+    padding-top: 21px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.bulletproof-details .slider-body h2 {
+    margin: 0;
+    font-size: 1.379285714285714em;
+    color: #fff;
+    letter-spacing: 0.05em;
+}
+.bulletproof-details .slider-body .bulletproof-date {
+    font-size: 0.8392857142857143em;
+    font-family: 'AvenirNextLTProUltLtCnIt';
+    color: #fff;
+    letter-spacing: 0.1em;
+    margin-top: 10px;
+    margin-bottom: 32px;
+}
+.bulletproof-details .slider-body p {
+    font-size: 0.8635714285714286em;
+    color: #fff;
+    line-height: 18px;
+    letter-spacing: 0.05em;
+    text-indent: 20px;
+    text-align: justify;
+    margin-bottom: 21px;
+}
+.bulletproof-details .slider-body p:last-child {
+    margin-bottom: 0;
+}
+.bulletproof-details .slider-nav {
+    height: 90px;
+    padding-top: 42px;
+}
+
+/* Member page */
+.member-page {
+    padding-top: 23px;
+}
+.member-page h2 {
+    font-size: 1.692142857142857em;
+    font-weight: normal;
+    font-family: 'AvenirNextLTProBold';
+    color: #fff;
+    background: rgba(0,0,0,.4);
+    margin: 0;
+    line-height: 53px;
+    padding-left: 21px;
+    letter-spacing: 0.06em;
+}
+.member-page h2 a {
+    color: #fff;
+    text-decoration: none;
+}
+.member-page-left {
+    float: left;
+    width: 49%;
+    height: 438px;
+    background: url(../img/memer-page-left-bg.jpg) center no-repeat;
+    margin-right: 1%;
+}
+.member-page-details {
+    float: left;
+    width: 49%;
+}
+.member-page-box {
+    text-align: center;
+    float: left;
+    width: 48%;
+    height: 216px;
+    margin-bottom: 8px;
+    margin-right: 2%;
+    padding-top: 28px;
+    letter-spacing: 0.08em;
+}
+@media screen and (max-width: 992px) {
+    .member-page-left {
+        width: 100%;
+        float: none;
+        margin-right: 0;
+    }
+    .member-page-details {
+        width: 100%;
+        float: none;
+    }
+    .member-page-box {
+        width: 100%;
+        float: none;
+        margin-right: 0;
+    }
+}
+.member-page-box:nth-child(2n) {
+    margin-right: 0;
+}
+.member-page-box a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    font-size: 0.8778571428571429em;
+}
+.member-page-box.member-account {
+    background: url(../img/member-account-bg.jpg) center no-repeat;
+    background-size: auto 100%;
+    position: relative;
+}
+.member-page-box.member-account a:last-child {
+    font-family: 'AvenirNextLTProDemi';
+    font-size: 0.7592857142857143em;
+    position: absolute;
+    margin: auto;
+    bottom: 12.5%;
+    left: 0;
+    right: 0;
+}
+.member-page-box.member-limited-offer {
+    background: #494949;
+}
+.member-page-box.member-limited-offer a {
+
+}
+.member-page-box.member-bulletproof {
+    background: #494949;
+}
+.member-page-box.member-bulletproof a {
+
+}
+.member-page-box.member-rewards {
+    background: url(../img/member-rewards-bg.jpg) center no-repeat;
+    background-size: auto 100%;
+}
+.member-page-box.member-rewards a {
+
+}

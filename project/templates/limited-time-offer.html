@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container">
+{% block header %}{{ super() }}{% endblock %}
+<div class="row content">
+    <div class="col-md-3 sidebar" style="padding: 0;">
+        {% block greetings %}{{ super() }}{% endblock %}
+        {% block menu %}{{ super() }}{% endblock %}
+    </div>
+    <div class="col-md-9">
+        <ul class="offers">
+        {% for offer in offers %}
+            <li>
+                <div class="offer-img">
+                    <img src="{{ offer.image.url }}" title="{{ offer.image.title }}" alt="{{ offer.image.title }}">
+                    <span class="offer-discount">-{{ offer.discount }}%</span>
+                </div>
+                <div class="offer-details">
+                    <h2>{{ offer.title }}</h2>
+                    <h3>{{ offer.description }}</h3>
+                    <div class="offer-price-old">Rp {{ offer.old_price }}</div>
+                    <div class="offer-price-new">Rp {{ offer.price }}</div>
+                    <button class="btn-apply">Apply</button>
+                </div>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+</div>
+</div>
+{% endblock %}

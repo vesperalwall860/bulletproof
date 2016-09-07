@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/unslider.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/unslider-dots.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    {% if title %}
+        <title>{{ title }} - Bulletproof</title>
+    {% else %}
+        <title>Welcome! - Bulletproof</title>
+    {% endif %}
+</head>
+<body>
+{% block body %}
+{% block header %}
+<div class="row header">
+    <div class="col-md-3 black">
+        <span class="menu-icon"></span>
+        <a href="{{ url_for('member_page') }}"><img src="/static/img/logo.jpg" class="logo"></a>
+    </div>
+    <div class="col-md-7 grey">
+        <span class="refresh-icon"></span>
+        <input  type="text" class="form-control search" placeholder="Search here">
+    </div>
+    <div class="col-md-2 grey last">
+        <a href="{{ url_for('member_account') }}" class="settings-icon"></a>
+        <a href="{{ url_for('member_account') }}"><img src="/static/img/profile-photo-small.png" class="profile-photo-small"></a>
+        <div id="cart">
+            <div><strong>{{ cart.products|length }}</strong> items</div>
+            <div>in cart</div>
+            <div class="inner {% if cart and cart.products.items()|length == 0 %}empty{% endif %}">
+                <ul>
+                {% for k, v in cart.products.items() %}
+                    <li><span class="delete" data-id="{{ k }}">X</span> {{ v.name }} x {{ v.qty }} = ${{ '%d' % (v.qty * v.price) }}</li>
+                {% endfor %}
+                <li><strong>Total: ${{ '%d' % cart.total }}</strong></li>
+                </ul>
+                <a href="{{ url_for('checkout') }}">Checkout</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block greetings %}
+<div class="greetings">
+    <a href="{{ url_for('member_account') }}"><img src="/static/img/profile-photo.png" class="profile-photo"></a>
+    <span class="smaller">Welcome,</span>
+    <div>Krisna Adi Wiyana</div>
+</div>
+{% endblock %}
+{% block menu %}
+<ul class="menu">
+    <li><a href="{{ url_for('member_page') }}" {% if active_menu == 'home' %} class="active" {% endif %}>Home</a></li>
+    <li><a href="{{ url_for('live_bulletproof') }}" {% if active_menu == 'live_bulletproof' %} class="active" {% endif %}>Live Bulletproof</a></li>
+    <li><a href="{{ url_for('member_account') }}" {% if active_menu == 'member_account' %} class="active" {% endif %}>Member Account</a></li>
+    <li><a href="{{ url_for('limited_time_offer') }}" {% if active_menu == 'limited_time_offer' %} class="active" {% endif %}>Limited Time Offers</a></li>
+    <li><a href="#" {% if active_menu == 'member_rewards' %} class="active" {% endif %}>Member Rewards</a></li>
+    <li><a href="{{ url_for('shop') }}" {% if active_menu == 'shop' %} class="active" {% endif %}>Shop</a></li>
+    <li><a href="#">Logout</a></li>
+</ul>
+{% endblock %}
+{% endblock %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<!-- <script src="/static/js/unslider-min.js"></script> -->
+<script src="/static/js/unslider.js"></script>
+<script src="/static/js/main.js"></script>
+</body>
+</html>

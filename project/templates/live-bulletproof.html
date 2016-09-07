@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container">
+{% block header %}{{ super() }}{% endblock %}
+<div class="row content">
+    <div class="col-md-3 sidebar" style="padding: 0;">
+        {% block greetings %}{{ super() }}{% endblock %}
+        {% block menu %}{{ super() }}{% endblock %}
+    </div>
+    <div class="col-md-9 live-bulletproof">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="slider-body">
+                    <ul>
+                        <li><div class="player"></div></li>
+                        <li><div class="player"></div></li>
+                        <li><div class="player"></div></li>
+                    </ul>
+                </div>
+                <div class="slider-nav dark">
+                    <ul>
+                        <li class="arrow-left"></li>
+                        <li class="active"></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li class="arrow-right"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="row">
+                {% for live in lives %}
+                    <div class="col-md-12">
+                        <div class="slider-body text-content">
+                            <h2><a href="{{ url_for('live_bulletproof_details') }}">{{ live.title }}</a></h2>
+                            <p>{{ live.text }}</p>
+                        </div>
+                        <div class="slider-nav">
+                            <ul>
+                                <li class="arrow-left"></li>
+                                <li class="active"></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li class="arrow-right"></li>
+                            </ul>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

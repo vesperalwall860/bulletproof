@@ -1,4 +1,10 @@
 from flask import Flask
-app = Flask(__name__)
+from flask_sqlalchemy import SQLAlchemy
+from flask_mail import Mail
 
-import project.views
+app = Flask(__name__)
+app.config.from_pyfile('config.py')
+db = SQLAlchemy(app)
+mail = Mail(app)
+
+from project import views

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container">
+{% block header %}{{ super() }}{% endblock %}
+<div class="row content">
+    <div class="col-md-3 sidebar" style="padding: 0;">
+        {% block greetings %}{{ super() }}{% endblock %}
+        {% block menu %}{{ super() }}{% endblock %}
+    </div>
+    <div class="col-md-9 live-bulletproof-details">
+        <div class="bulletproof-images">
+            {% for image in post_images %}
+                <div>
+                    <img src="{{ image.url }}" title="{{ image.title }}" alt="{{ image.alt }}">
+                </div>
+            {% endfor %}
+        </div>
+        <div class="bulletproof-details">
+            <div class="slider-body">
+                <h2>{{ post_title }}</h2>
+                <div class="bulletproof-date">{{ post_date }}</div>
+                {{ post_text|safe }}
+            </div>
+            <div class="slider-nav">
+                <ul>
+                    <li class="arrow-left"></li>
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li class="arrow-right"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

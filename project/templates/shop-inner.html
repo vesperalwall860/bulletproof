@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container">
+{% block header %}{{ super() }}{% endblock %}
+<div class="row content">
+    <div class="col-md-3 sidebar" style="padding: 0;">
+        {% block greetings %}{{ super() }}{% endblock %}
+        {% block menu %}{{ super() }}{% endblock %}
+    </div>
+    <div class="col-md-9 shop-inner">
+        <div class="inner">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="product-images-main">
+                    {% if product.image %}
+                        <img src="{{ product.image.url }}" class="product-img-large" title="{{ product.image.title }}" alt="{{ product.image.title }}">
+                    {% endif %}
+                    </div>
+                    <ul class="product-images">
+                    {% for image in product.images[1:] %}
+                        <li><img src="{{ image.url }}" title="{{ image.title }}" alt="{{ image.title }}"></li>
+                    {% endfor %}
+                    </ul>
+                </div>
+                <div class="col-md-7 product-details">
+                    <h2>{{ product.name }}</h2>
+                    <div class="clearfix">
+                        <ul class="product-rating">
+                        {% for i in range(1,6) %}
+                            {% if i <= product.rate %}
+                                <li class="full"></li>
+                            {% else %}
+                                <li class="empty"></li>
+                            {% endif %}
+                        {% endfor %}
+                        </ul>
+                        <span class="product-reviews">{{ product.reviews.count() }} Review(s)&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Add Your Review</a></span>
+                    </div>
+                    <div class="product-price">${{ product.price }}</div>
+                    <div class="product-overview">
+                        <h3>Quick Overview:</h3>
+                        <p>{{ product.overview }}</p>
+                    </div>
+                    <div class="product-controls">
+                        <div class="input-outer">
+                            <input type="text" class="qty" value="1">
+                            <span class="qty-controls">
+                                <button class="plus">+</button>
+                                <button class="minus">‒</button>
+                            </span>
+                        </div>
+                        <button class="btn-add-to-cart" data-id="{{ product.id }}">Add to Cart</button>
+                        <span class="btn-like"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="tabs">
+                        <ul class="tab-title">
+                            <li class="active">Description</li>
+                            <li>Reviews</li>
+                            <li>Information</li>
+                        </ul>
+                        <ul class="tab-body">
+                            <li class="active">
+                            <!-- Description -->
+                                {{ product.description|safe }}
+                            </li>
+                            <li>
+                            <!-- Reviews -->
+                            {% if product.reviews.count() %}
+                                {% for review in product.reviews %}
+                                    <p>
+                                        Rate: <strong>{{ product.review.rate }}</strong>
+                                    </p>
+                                    <p style="border-bottom: 1px solid #707070;">
+                                        Text:<br>{{ product.review.text }}
+                                        <br><br>
+                                    </p>
+                                {% endfor %}
+                            {% else %}
+                                <p>No reviews yet.</p>
+                            {% endif %}
+                            </li>
+                            <li>
+                            <!-- Information -->
+                                {{ product.information|safe }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container">
+{% block header %}{{ super() }}{% endblock %}
+<div class="row content">
+    <div class="col-md-3 sidebar" style="padding: 0;">
+        {% block greetings %}{{ super() }}{% endblock %}
+        {% block menu %}{{ super() }}{% endblock %}
+    </div>
+    <div class="col-md-9">
+        <h1>Shop</h1>
+        <ul class="products">
+        {% for product in products %}
+            <li>
+                <ul class="product-rating">
+                {% for i in range(1,6) %}
+                    {% if i <= product.rate %}
+                        <li class="full"></li>
+                    {% else %}
+                        <li class="empty"></li>
+                    {% endif %}
+                {% endfor %}
+                </ul>
+                <div class="product-title"><a href="{{ url_for('shop_inner', product_id=product.id) }}">{{ product.name }}</a></div>
+                <div class="product-price">${{ '%d' % product.price }}</div>
+                <a href="{{ url_for('shop_inner', product_id=product.id) }}">
+                <img src="{{ product.image.url }}" class="product-img" title="{{ product.image.title }}" alt="{{ product.image.title }}">
+                </a>
+                <div class="product-controls">
+                    <span class="product-label">New</span>
+                    <a href="#" data-id="{{ product.id }}" class="btn-add-to-cart">Add To Cart</a>
+                    <span class="btn-like"></span>
+                </div>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+</div>
+</div>
+{% endblock %}

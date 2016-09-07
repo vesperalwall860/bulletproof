@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container">
+{% block header %}{{ super() }}{% endblock %}
+<div class="row content">
+    <div class="col-md-3 sidebar" style="padding: 0;">
+        {% block greetings %}{{ super() }}{% endblock %}
+        {% block menu %}{{ super() }}{% endblock %}
+    </div>
+    <div class="col-md-9 member-account">
+        <div class="inner">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Krisna's Account</h2>
+                    <form>
+                        <div>
+                            <label>Your email</label>
+                            <input type="text" value="{{ email }}">
+                        </div>
+                        <div>
+                            <label>First name</label>
+                            <input type="text" value="{{ first_name }}">
+                        </div>
+                        <div>
+                            <label>Last name</label>
+                            <input type="text" value="{{ last_name }}">
+                        </div>
+                        <div>
+                            <label>New password (<em>leave blank if you don't want to change it</em>)</label>
+                            <input type="password">
+                        </div>
+                        <div>
+                            <label>Confirm password</label>
+                            <input type="password">
+                        </div>
+                        <div>
+                            <label>Enter current password to confirm</label>
+                            <input type="password">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <img src="{{ profile_image.url }}" class="profile-photo" title="{{ profile_image.title }}" alt="{{ profile_image.title }}">
+                    <button class="btn-upload">Upload now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
