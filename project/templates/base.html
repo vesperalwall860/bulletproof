@@ -31,12 +31,15 @@
         <div id="cart">
             <div><strong>{{ cart.products|length }}</strong> items</div>
             <div>in cart</div>
-            <div class="inner {% if cart and cart.products.items()|length == 0 %}empty{% endif %}">
+            <div class="inner {% if (cart and cart.products.items()|length == 0) or not cart.products %}empty{% endif %}">
                 <ul>
-                {% for k, v in cart.products.items() %}
-                    <li><span class="delete" data-id="{{ k }}">X</span> {{ v.name }} x {{ v.qty }} = ${{ '%d' % (v.qty * v.price) }}</li>
-                {% endfor %}
+                {% if cart.products %}
+                    {% for k, v in cart.products.items() %}
+                        <li><span class="delete" data-id="{{ k }}">X</span> {{ v.name }} x {{ v.qty }} = ${{ '%d' % (v.qty * v.price) }}</li>
+                    {% endfor %}
+
                 <li><strong>Total: ${{ '%d' % cart.total }}</strong></li>
+                {% endif %}
                 </ul>
                 <a href="{{ url_for('checkout') }}">Checkout</a>
             </div>
