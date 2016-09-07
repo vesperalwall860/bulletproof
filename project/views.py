@@ -264,13 +264,14 @@ def review_add(product_id):
         text = request.form.get('text')
         rate = request.form.get('rate')
 
+        # add the new review to a database
         review = models.Review(author=author, author_email=author_email,
             text=text, rate=int(rate), pub_date=datetime.datetime.utcnow(),
             product=product)
-
         db.session.add(review)
         db.session.commit()
 
+        # generate the output html with the all product's reviews
         product = models.Product.query.get(product_id)
         reviews = product.reviews.all()
 
@@ -291,6 +292,8 @@ def review_add(product_id):
             """ % (review.author, review.rate, review.text)
 
         return html_output
+
+    # if it was not sent by our js script
     else:
         return 'None'
 
