@@ -72,6 +72,51 @@ $(document).ready(function() {
             }
         });
     });
+    $('.product-details span.product-reviews a').click(function(e) {
+        e.preventDefault();
+        $('.review-add-popup-bg').fadeIn();
+        $('.review-add-popup').fadeIn();
+    });
+    $('.review-add-popup-bg').click(function(e) {
+        $(this).fadeOut();
+        $('.review-add-popup').fadeOut();
+    });
+    $('.review-add-popup form button').click(function(e) {
+        e.preventDefault();
+        var productId = $('.review-add-popup form input[name="product_id"]').val();
+        var validate = true;
+        // collect all the form's inputs data
+        var context = {
+            'author': $('.review-add-popup form input[name="author"]').val(),
+            'author_email': $('.review-add-popup form input[name="author_email"]').val(),
+            'text': $('.review-add-popup form textarea[name="text"]').val(),
+            'rate': $('.review-add-popup form input[name="rate"]:checked').val()
+        }
+        // check if any of the fields are not filled, 
+        // otherwise don't allow it to be sent
+        for (var key in context) {
+            if (context[key] === undefined){
+                validate = false;
+                continue;
+            }
+            if (context[key].length == 0) {
+                validate = false;
+            }
+        }
+        if (validate) {
+            $.post('/review/add/' + productId, context, function(data) {
+                console.log(data);
+                // check if the product we want to add a review to exists
+                if (data != 'None') {
+                    alert('Your review has been sent.');
+                    // close the popup window
+                    $('.review-add-popup-bg').click();
+                }
+            });
+        } else {
+            alert('All the fields are required.');
+        }
+    });
     $('.slider-body').unslider();
 
 });

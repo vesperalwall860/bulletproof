@@ -1,4 +1,4 @@
-from project import app, models, forms, mail
+from project import app, models, forms, mail, db
 import datetime
 from flask import render_template, flash, redirect, request, session
 from flask_sqlalchemy import SQLAlchemy
@@ -248,6 +248,31 @@ def checkout():
     return render_template('checkout.html', **context)
 
 
+@app.route('/review/add/<int:product_id>', methods=['GET','POST'])
+def review_add(product_id):
+    # this is the product we want to add the review to
+    product = models.Product.query.get(product_id)
+
+    if not product:
+        return 'None'
+
+    # if it was sent from out js script
+    if request.method == 'POST':
+        author = request.form.get('author')
+        author_email = request.form.get('author_email')
+        text = request.form.get('text')
+        rate = request.form.get('rate')
+
+        review = models.Review(author=author, author_email=author_email,
+            text=text, rate=int(rate), pub_date=datetime.datetime.utcnow(),
+            product=product)
+
+        db.session.add(review)
+        db.session.commit()
+
+        return 'Success'
+    else:
+        return 'None'
 
 
 @app.route('/member-page')

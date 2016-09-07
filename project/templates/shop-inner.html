@@ -72,10 +72,13 @@
                             {% if product.reviews.count() %}
                                 {% for review in product.reviews %}
                                     <p>
-                                        Rate: <strong>{{ product.review.rate }}</strong>
+                                        Author: <strong>{{ review.author }}</strong>
+                                    </p>
+                                    <p>
+                                        Rate: <strong>{{ review.rate }}</strong>
                                     </p>
                                     <p style="border-bottom: 1px solid #707070;">
-                                        Text:<br>{{ product.review.text }}
+                                        Text:<br>{{ review.text }}
                                         <br><br>
                                     </p>
                                 {% endfor %}
@@ -90,6 +93,38 @@
                         </ul>
                     </div>
                 </div>
+            </div>
+            <div class="review-add-popup-bg"></div>
+            <div class="review-add-popup">
+                <h2>Add Your Review</h2>
+                <form>
+                    <div>
+                        <label for="author">Your name</label>
+                        <input type="text" id="author" name="author" class="form-control">
+                    </div>
+                    <div>
+                        <label for="author_email">Your email</label>
+                        <input type="text" id="author_email" name="author_email" class="form-control">
+                    </div>
+                    <div>
+                        <label for="text">Review</label>
+                        <textarea name="text" id="text" cols="30" rows="5" class="form-control"></textarea>
+                    </div>
+                    <div>
+                        <label>Rate</label>
+                        <ul>
+                            <li>1<input type="radio" name="rate" class="form-control" value="1"></li>
+                            <li>2<input type="radio" name="rate" class="form-control" value="2"></li>
+                            <li>3<input type="radio" name="rate" class="form-control" value="3"></li>
+                            <li>4<input type="radio" name="rate" class="form-control" value="4"></li>
+                            <li>5<input type="radio" name="rate" class="form-control" value="5"></li>
+                        </ul>
+                    </div>
+                    <input type="hidden" name="product_id" value="{{ product.id }}">
+                    <div>
+                        <button>Add review</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

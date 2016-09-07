@@ -662,12 +662,38 @@ ul.products:after {
 .member-account {
     color: #fff;
 }
-.member-account .inner {
+.member-account .inner,
+.review-add-popup {
     margin: 24px 20px;
     background: #303030;
     padding: 31px;
 }
-.member-account h2 {
+.review-add-popup-bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: rgba(0,0,0,.4);
+    cursor: pointer;
+    display: none;
+}
+.review-add-popup {
+    position: fixed;
+    width: 60%;
+    height: 90%;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    color: #fff;
+    display: none;
+}
+.member-account h2,
+.review-add-popup h2 {
     margin: 0;
     font-size: 1.171428571428571em;
     font-weight: normal;
@@ -679,16 +705,21 @@ ul.products:after {
 .member-account .input-group {
 
 }
-.member-account label {
+.member-account label,
+.review-add-popup label {
     display: block;
     font-size: 0.8164285714285714em;
     font-family: 'AvenirNextLTProUltLt';
     line-height: 15px;
 }
-.member-account label em {
+.member-account label em,
+.review-add-popup label em {
     font-family: 'AvenirNextLTProUltLtIt';
 }
-.member-account input {
+.member-account input,
+.review-add-popup input[type=text],
+.review-add-popup textarea,
+.review-add-popup button {
     display: block;
     font-size: 0.8164285714285714em;
     background: none;
@@ -701,8 +732,42 @@ ul.products:after {
     /*width: 206.5%;*/
     width: 100%;
     margin-bottom: 13px;
+    color: #fff;
 }
-.member-account input[type=submit]:hover {
+.review-add-popup textarea {
+    height: auto;
+    padding: 10px 15px;
+}
+.review-add-popup input[type=radio] {
+    display: block;
+    width: auto;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+    height: auto;
+}
+.review-add-popup ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 13px;
+}
+.review-add-popup ul li {
+    text-align: center;
+    float: left;
+    margin-right: 10px;
+}
+.review-add-popup ul:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+}
+.member-account input[type=submit]:hover,
+.review-add-popup button:hover {
     background: #fff;
     color: #303030;
 }
